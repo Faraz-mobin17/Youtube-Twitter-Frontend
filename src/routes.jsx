@@ -12,6 +12,9 @@ import {
   SubscriptionsPage,
 } from "./pages/index";
 import Layout from "./Layout";
+import Playlits from "./pages/Playlits";
+import Settings from "./pages/Settings";
+import SignupPage from "./pages/SignupPage";
 
 const AppRoutes = createBrowserRouter([
   {
@@ -22,10 +25,7 @@ const AppRoutes = createBrowserRouter([
         path: "",
         element: <HomePage />,
       },
-      {
-        path: "/login",
-        element: <LoginPage />,
-      },
+
       {
         path: "/dashboard",
         element: <DashboardPage />,
@@ -39,7 +39,7 @@ const AppRoutes = createBrowserRouter([
         element: <HistoryPage />,
       },
       {
-        path: "/my-content",
+        path: "/channel",
         element: <MyContentPage />,
       },
       {
@@ -50,8 +50,28 @@ const AppRoutes = createBrowserRouter([
         path: "/subscriptions",
         element: <SubscriptionsPage />,
       },
+      {
+        path: "/playlists",
+        element: <Playlits />,
+      },
+      {
+        path: "/settings",
+        element: <Settings />,
+      },
     ],
     errorElement: <Error />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/signup",
+    element: <SignupPage />,
+  },
+  {
+    path: "*",
+    element: <Error />,
   },
 ]);
 

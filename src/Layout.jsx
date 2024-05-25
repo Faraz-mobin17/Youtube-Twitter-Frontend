@@ -1,15 +1,19 @@
 import React from "react";
-import Header from "./components/layout/Header";
-import Sidebar from "./components/layout/Sidebar";
-import MainContent from "./components/MainContent";
+import { Header, Sidebar } from "./components/layout/index";
+
+import { Outlet } from "react-router-dom";
 
 export default function Layout() {
   return (
     <>
       <Header />
       <div className="flex">
-        <Sidebar />
-        <MainContent />
+        <div className="w-2/12">
+          <Sidebar />
+        </div>
+        <div className="w-10/12">
+          <Outlet />
+        </div>
       </div>
     </>
   );
