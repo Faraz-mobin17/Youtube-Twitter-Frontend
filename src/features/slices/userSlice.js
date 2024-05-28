@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+
 import axios from "axios";
 
 const initialState = {
@@ -30,6 +31,9 @@ const userSlice = createSlice({
         state.loading = false;
         state.userData = action.payload;
       });
+    builder.addCase(userChannelProfile.rejected, (state) => {
+      state.loading = false;
+    });
   },
 });
 
