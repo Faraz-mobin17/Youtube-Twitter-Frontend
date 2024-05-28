@@ -8,13 +8,18 @@ import {
   HomePage,
   LikePage,
   LoginPage,
-  MyContentPage,
   SubscriptionsPage,
 } from "./pages/index";
 import Layout from "./Layout";
 import Playlits from "./pages/Playlits";
 import Settings from "./pages/Settings";
 import SignupPage from "./pages/SignupPage";
+import ChannelPage from "./pages/ChannelPage";
+import StudioPage from "./pages/StudioPage";
+import ChannelVideos from "./components/specific/Channel/ChannelVideos";
+import ChannelPlaylist from "./components/specific/Channel/ChannelPlaylist";
+import ChannelTweets from "./components/specific/Channel/ChannelTweets";
+import ChannelSubscribed from "./components/specific/Channel/ChannelSubscribed";
 
 const AppRoutes = createBrowserRouter([
   {
@@ -40,7 +45,25 @@ const AppRoutes = createBrowserRouter([
       },
       {
         path: "/channel",
-        element: <MyContentPage />,
+        element: <ChannelPage />,
+        children: [
+          {
+            path: "videos",
+            element: <ChannelVideos />,
+          },
+          {
+            path: "playlists",
+            element: <ChannelPlaylist />,
+          },
+          {
+            path: "tweets",
+            element: <ChannelTweets />,
+          },
+          {
+            path: "subscribed",
+            element: <ChannelSubscribed />,
+          },
+        ],
       },
       {
         path: "/collections",
@@ -68,6 +91,10 @@ const AppRoutes = createBrowserRouter([
   {
     path: "/signup",
     element: <SignupPage />,
+  },
+  {
+    path: "/studio",
+    element: <StudioPage />,
   },
   {
     path: "*",

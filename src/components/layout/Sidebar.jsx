@@ -9,12 +9,14 @@ import {
   IoFolderOutline,
   CiSettings,
   TbUserCheck,
+  SiYoutubestudio,
 } from "../../utils/icons";
 
 const menuItems = [
   ["Home", <RiHome6Line />, "/"],
   ["Subscriptions", <TbUserCheck />, "/subscriptions"],
   ["Your Channel", <MdOutlineSlowMotionVideo />, "/channel"],
+  ["Your Studio", <SiYoutubestudio />, "/studio"],
   ["Liked Videos", <BiLike />, "/likes"],
   ["History", <BiHistory />, "/history"],
   ["Playlists", <IoFolderOutline />, "/playlists"],
@@ -31,8 +33,8 @@ export default function Sidebar() {
           key={index}
           className="mb-4 font-semibold border-2 p-2 border-slate-500 cursor-pointer hover:bg-purple-500 hover:text-white transition-colors flex items-center"
         >
-          <span className="mr-2 text-2xl">{Icon}</span>
-          <span>{label}</span>
+          <span className="mr-2 text-xl">{Icon}</span>
+          <span className="text-sm">{label}</span>
         </NavLink>
       ))}
     </aside>

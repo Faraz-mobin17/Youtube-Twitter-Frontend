@@ -3,10 +3,10 @@ import LoginPage from "./LoginPage";
 import DashboardPage from "./DashboardPage";
 import LikePage from "./LikePage";
 import HistoryPage from "./HistoryPage";
-import MyContentPage from "./MyContentPage";
+import MyContentPage from "./StudioPage";
 import CollectionsPage from "./CollectionsPage";
 import SubscriptionsPage from "./SubscriptionsPage";
-
+import ChannelPage from "./ChannelPage";
 export {
   CollectionsPage,
   DashboardPage,
@@ -16,4 +16,5 @@ export {
   LoginPage,
   MyContentPage,
   SubscriptionsPage,
+  ChannelPage,
 };
